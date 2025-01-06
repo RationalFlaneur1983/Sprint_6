@@ -36,3 +36,11 @@ class BasePage:
     @allure.step('Вернуть текущий URL браузера')
     def current_url(self):
         return self.driver.current_url
+
+    @allure.step('Переключиться на вкладку браузера')
+    def switch_window(self, window_number: int):
+        self.driver.switch_to.window(self.driver.window_handles[window_number])
+
+    @allure.step("Ожидание, пока URL изменится с 'about:blank'")
+    def wait_url_until_not_about_blank(self, time=10):
+        return WebDriverWait(self.driver, time).until_not(EC.url_to_be('about:blank'))

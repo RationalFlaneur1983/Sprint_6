@@ -20,13 +20,6 @@ class YandexScooterHomePage(BasePage):
         elems = self.find_elements(Locators.faq_question_buttons_locator, 10)
         return elems[question_number].click()
 
-    @allure.step('Переключиться на вкладку браузера')
-    def switch_window(self, window_number: int = 1):
-        return self.driver.switch_to.window(self.driver.window_handles[window_number])
-
-    def wait_url_until_not_about_blank(self, time=10):
-        return WebDriverWait(self.driver, time).until_not(EC.url_to_be('about:blank'))
-
     @allure.step('Нажать на лого Яндекса вверху')
     def click_yandex_button(self):
         return self.find_element(BasePageLocator.yandex_logo_link_locator).click()

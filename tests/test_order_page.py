@@ -3,7 +3,7 @@ import allure
 from helpers.service_urls import Urls
 from page_objects.home_page import YandexScooterHomePage
 from page_objects.order_page import YandexScooterOrderPage
-from helpers.test_data import YandexScooterOrderForm as order_data
+from helpers.ui_test_data import YandexScooterOrderForm as order_data
 
 
 class TestYaScooterOrderPage:
